@@ -5,11 +5,7 @@
 
 USE db_cursos_online;
 
--- =========================================================================
--- PARTE 1: CONSULTAS AVANÇADAS (SELECTs)
--- =========================================================================
-
--- 1. SELECT BÁSICO COM FILTRO E ORDENAÇÃO
+-- SELECT BÁSICO COM FILTRO E ORDENAÇÃO
 -- Objetivo: Cursos de Programação (id_categoria = 1) abaixo de R$150, ordenados por preço (WHERE e ORDER BY).
 SELECT
     id_curso,
@@ -23,7 +19,7 @@ WHERE
 ORDER BY
     preco DESC;
 
--- 2. FILTROS COMPLEXOS: NOT IN E LIKE
+-- FILTROS COMPLEXOS: NOT IN E LIKE
 -- Objetivo: Cursos que NÃO são das categorias 1(Programação) e 5(Línguas) (NOT IN) E que tenham 'Design' no título (LIKE).
 SELECT
     titulo,
@@ -35,7 +31,7 @@ WHERE
     id_categoria NOT IN (1, 5)
     AND titulo LIKE '%Design%';
 
--- 3. INNER JOIN (Listagem de Matrículas Efetivas)
+-- INNER JOIN (Listagem de Matrículas Efetivas)
 -- Objetivo: Listar o nome dos alunos e os títulos dos cursos que ELES PAGARAM (Requisito 1 INNER JOIN).
 SELECT
     a.nome AS Nome_Aluno,
@@ -50,7 +46,7 @@ INNER JOIN
 ORDER BY
     Nome_Aluno;
 
--- 4. LEFT JOIN (Relatório de Avaliações)
+-- LEFT JOIN (Relatório de Avaliações)
 -- Objetivo: Mostrar TODOS os Instrutores e a média de avaliação de seus cursos (Requisito LEFT JOIN).
 SELECT
     i.nome AS Nome_Instrutor,
@@ -69,7 +65,7 @@ ORDER BY
     Media_Avaliacoes DESC;
 
 
--- 5. GROUP BY + FUNÇÃO DE AGREGAÇÃO + HAVING
+-- GROUP BY + FUNÇÃO DE AGREGAÇÃO + HAVING
 -- Objetivo: Contar matrículas por curso (COUNT) e mostrar APENAS os cursos com 2 ou mais matrículas (HAVING).
 SELECT
     c.titulo AS Titulo_Curso,
@@ -83,11 +79,6 @@ GROUP BY
 HAVING
     Total_Matriculas >= 2;
 
-
--- =========================================================================
--- PARTE 2: ÍNDICE (INDEX)
--- =========================================================================
-
 -- Requisito: Criação de 1 INDEX em uma coluna de alta frequência de busca.
 -- Escolha: email na tabela alunos (usado para login).
 CREATE INDEX idx_aluno_email ON alunos (email);
@@ -100,15 +91,11 @@ CREATE INDEX idx_aluno_email ON alunos (email);
       Ajudaria em qualquer consulta que filtre o acesso de um aluno pelo email,
       como:
 */
--- DEMONSTRAÇÃO DO USO DO ÍNDICE:
+-- USO DO ÍNDICE:
 /* SELECT id_aluno, nome
 FROM alunos
 WHERE email = 'rafael.costa@mail.com';
 */
-
--- =========================================================================
--- PARTE 3: VIEW (Relatório Gerencial)
--- =========================================================================
 
 -- Requisito: Criação de 1 VIEW que usa JOIN e Agregação para um relatório útil.
 -- Objetivo: Faturamento total e número de vendas por instrutor.
