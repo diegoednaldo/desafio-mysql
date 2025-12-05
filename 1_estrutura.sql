@@ -25,7 +25,7 @@ CREATE TABLE alunos (
     id_aluno INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    cpf VARCHAR(20),
+    cpf VARCHAR(20) NOT NULL,
     data_cadastro DATETIME DEFAULT NOW(), -- Requisito: Coluna com DEFAULT (Data de cadastro)
     ativo BOOLEAN DEFAULT 1 -- Requisito: Outra coluna com DEFAULT (Status inicial)
 );
