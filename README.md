@@ -1,1 +1,1 @@
-# desafio-mysql
+# Repositório criado para adicionar os scripts utilizado para realizar o desafio de banco de dados.
