@@ -42,7 +42,7 @@ INSERT INTO matriculas (id_aluno, id_curso, valor_pago, status) VALUES
 (4, 5, 99.00, 'EM_ANDAMENTO'),
 (5, 2, 79.90, 'CONCLUIDO'),
 (6, 1, 49.90, 'EM_ANDAMENTO'),
-(1, 4, 199.90, 'EM_ANDAMENTO'); -- Bruna em Python
+(1, 4, 199.90, 'EM_ANDAMENTO');
 
 INSERT INTO modulos (titulo, ordem, id_curso) VALUES
 ('Introdução ao MySQL', 1, 1),
@@ -65,3 +65,4 @@ INSERT INTO avaliacoes (id_matricula, nota, comentario) VALUES
 (5, 5, 'Melhor curso de Design que já fiz!'),
 (6, 3, 'Esperava mais exemplos práticos de Join.'),
 (7, 5, 'Python é incrível! Instrutor Fernando manda bem.');
+
