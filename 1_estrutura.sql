@@ -1,4 +1,4 @@
-/* ESTRUTURA DO BANCO DE DADOS - COMPLETA (Sem Chaves de Unicidade Compostas)
+/* ESTRUTURA DO BANCO DE DADOS
    OBJETIVO: Criação das 11 tabelas, PKs simples, FKs e Constraints.
 */
 
